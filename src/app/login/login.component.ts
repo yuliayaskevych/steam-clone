@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-
+import { users } from '../users';
 import { UserService } from '../user.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   public loginForm = this.formBuilder.group({
     email: new FormControl(null, [Validators.required]),
     password: new FormControl(null, [Validators.required]),
-  })
+  });
+  public usersList = users; 
 
   private uid: any;
 

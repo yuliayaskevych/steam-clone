@@ -25,22 +25,24 @@ h3 {
 
 button {
   cursor: pointer;
-}
-
-.searchInput {
-  width: 80%;
-  height: 35px;
-  border-radius: 5px;
-  border: 1px solid #9BB7D4;
-
-}
-
-button {
   color: #fff;
   background-color: #55d;
   border: none;
   border-radius: 5px;
 }
+button:disabled {
+  background-color: aliceblue;
+  color: #555;
+  opacity: 0.3;
+}
+.searchInput {
+  width: 80%;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #9BB7D4;
+margin-bottom: 15px;
+}
+
 
 .searchButton {
   height: 40px;
@@ -82,7 +84,13 @@ button {
 }
 
 .card .about {
-  padding: 10px 15px;
+  padding: 10px 20px;
+  height: 150px;
+	overflow: hidden;
+	color: transparent;
+	background-clip: text;
+	background-image: linear-gradient(to bottom, #000, #000, #fff);
+  text-align: justify;
 }
 
 .card-img {
@@ -112,9 +120,20 @@ button {
   padding: 10px;
   box-sizing: border-box;
 }
-
+.card-share button:hover{
+  background-color: #A0DAA9;
+}
 .card-share button {
   padding: 15px 25px;
   min-width: 45%;
   margin: 5px;
+}
+
+.round {
+  width: 100%;
+  height: calc(100vh - 56px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }

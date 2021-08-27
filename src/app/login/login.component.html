@@ -10,7 +10,9 @@
         </form>
     </div>
     <div>
-        <p>user_1@mail.ua</p>
-        <p>user_1</p>
+        <table>
+            <thead><th>login</th><th>password</th></thead>
+            <tr *ngFor="let user of usersList"><td>{{user.login}}</td><td>{{user.pass}}</td></tr>
+        </table>
     </div>
 </div>
