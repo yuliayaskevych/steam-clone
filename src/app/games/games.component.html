@@ -1,0 +1,43 @@
+<div class="block">
+    <div class="">
+        <h3>Games</h3>
+        <form [formGroup]="gamesForm">
+            <p>Search Games</p>
+            <input class="searchInput" type="text" placeholder="Search Games" formControlName="searchGames">
+            <button class="searchButton" type="button" (click)=addFilter()>Search</button>
+        </form>
+    </div>
+    <div>
+        <h3>Featured Games</h3>
+        <div class="blockGames">
+            <div class="cards">
+                <div class="card" *ngFor="let game of games">
+                    <div class="card-img">
+                        <h2>{{game.name}}</h2>
+                        <h3 class="card-img-money">{{game.price}} <span>UAH</span></h3>
+                    </div>
+                    <p class="about">{{game.about}}</p>
+                    <div class="card-share">
+                        <button type="button" (click)=addGame(game.name)>Add to Library</button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form [formGroup]="gamesForm">
+                    <p>Filter by price</p>
+                    <input type="range" id="range" formControlName="range" min="0" max={{max}} step="1" value="13"
+                        (change)=addFilter()>
+                    <p>Filter by tag</p>
+                    <input type="checkbox" id="casual" name="casual" formControlName="casual" (change)=addFilter()>
+                    <label for="casual">casual</label><br>
+                    <input type="checkbox" id="strategy" name="strategy" checked formControlName="strategy"
+                        (change)=addFilter()>
+                    <label for="strategy">strategy</label><br>
+                    <input type="checkbox" id="adventure" name="adventure" checked formControlName="adventure"
+                        (change)=addFilter()>
+                    <label for="adventure">adventure</label>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
